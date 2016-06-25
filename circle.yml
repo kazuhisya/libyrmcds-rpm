@@ -12,8 +12,8 @@ dependencies:
 
 test:
   override:
-    - docker run -ti kazuhisya/libyrmcds-rpm "-v"
+    - docker run -ti kazuhisya/libyrmcds-rpm yc -h
   post:
     - docker cp $(docker ps -lq):/libyrmcds-rpm/dist $CIRCLE_ARTIFACTS
-    - docker run -e COPR_LOGIN=$COPR_LOGIN -e COPR_USERNAME=$COPR_USERNAME -e COPR_TOKEN=$COPR_TOKEN --entrypoint "/libyrmcds-rpm/copr-deploy.sh" kazuhisya/yrmcds-rpm
+    - docker run -e COPR_LOGIN=$COPR_LOGIN -e COPR_USERNAME=$COPR_USERNAME -e COPR_TOKEN=$COPR_TOKEN --entrypoint "/libyrmcds-rpm/copr-deploy.sh" kazuhisya/libyrmcds-rpm
 
