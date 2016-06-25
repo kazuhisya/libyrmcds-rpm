@@ -4,7 +4,7 @@ project_name=yrmcds
 copr_login=$COPR_LOGIN
 copr_username=$COPR_USERNAME
 copr_token=$COPR_TOKEN
-spec_file=${project_name}.spec
+spec_file=lib${project_name}.spec
 
 
 mkdir -p ~/.config
