@@ -4,7 +4,7 @@
 
 This repository provides unofficial rpmbuild scripts for Red Hat Enterprise Linux and Fedora.
 
-- libyrmcds - memcached compatible KVS with master/slave replication. http://cybozu.github.io/libyrmcds/
+- libyrmcds - libyrmcds is a memcached client library written in C. http://cybozu.github.io/libyrmcds/
 
 
 ## Distro support
