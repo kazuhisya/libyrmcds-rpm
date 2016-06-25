@@ -1,0 +1,15 @@
+FROM fedora:23
+MAINTAINER Kazuhisa Hara <kazuhisya@gmail.com>
+
+RUN dnf install -y dnf-plugins-core rpmdevtools make git
+COPY / /libyrmcds-rpm
+WORKDIR /libyrmcds-rpm
+
+RUN dnf builddep -y ./libyrmcds.spec
+RUN make rpm
+RUN dnf install -y \
+        --nogpgcheck \
+        ./dist/RPMS/x86_64/libyrmcds-[^d.+].* \
+        copr-cli
+
+CMD ["yc", "version"]
